@@ -1,0 +1,75 @@
+
+.category {
+  padding: 12px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #260c82;
+    
+    th,
+    td {
+      padding: 1px;
+      
+    }
+
+    .category-image {
+      max-width: 50px;
+      margin-right: 5px;
+    }
+  }
+
+  .button {
+    margin-top: 10px;
+    text-align: right;
+
+    button {
+      background: linear-gradient(to right, #4b05ad, #5e2dc2);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      animation: pulse 1s infinite alternate;
+      transition: background 0.3s ease;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #e29033, #d0ca14);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .edit-button,
+  .delete-button {
+    background: linear-gradient(to right, #4b05ad, #5e2dc2);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(to right, #e29033, #d0ca14);
+      box-shadow: none; 
+    }
+  }
+
+  .filter {
+    display: flex;
+    align-items: center;
+
+    .small-dropdown {
+      width: 120px;
+    }
+  }
+
+  @keyframes pulse {
+    to {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(113, 71, 172, 0.8);
+    }
+  }
+}

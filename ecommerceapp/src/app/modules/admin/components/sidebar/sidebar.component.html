@@ -1,0 +1,9 @@
+<div class="sidebar">
+    <div *ngFor="let item of sidebarlist; let i = index"
+         [ngClass]="{'sidebar-item-active': item.active, 'sidebar-item': !item.active}" 
+         (click)="this.changeRoute(i)"
+         [routerLink]="item.link">
+      <span class="icon">{{ item.icon }}</span> {{ item.label }}
+    </div>
+  </div>
+  

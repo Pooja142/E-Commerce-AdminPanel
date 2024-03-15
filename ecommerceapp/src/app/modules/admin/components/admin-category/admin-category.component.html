@@ -1,0 +1,74 @@
+
+<div class="category">
+    <div class="filter">
+      <mat-form-field appearance="fill">
+        <mat-label>Filter by Category</mat-label>
+        <mat-select [(value)]="selectedFilterCategory" (selectionChange)="applyFilter()">
+          <mat-option value="all">All Categories</mat-option>
+          <mat-option *ngFor="let categoryName of getDistinctCategoryNames()" [value]="categoryName">
+            {{ categoryName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="button">
+      <button (click)="openModal()" mat-button>Add Product</button>
+    </div>
+    <table mat-table [dataSource]="categories" class="mat-elevation-z8">
+  
+      
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+   
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="images">
+        <th mat-header-cell *matHeaderCellDef> Images </th>
+        <td mat-cell *matCellDef="let element">
+          
+          <img *ngFor="let image of element.images" [src]="image" alt="Category Image" class="category-image" />
+        
+        </td>
+  
+      </ng-container>
+ 
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let element"> {{ element.price | currency: 'USD' }} </td>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="unit">
+        <th mat-header-cell *matHeaderCellDef> Unit </th>
+        <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="is_active">
+          <th mat-header-cell *matHeaderCellDef> Active </th>
+          <td mat-cell *matCellDef="let element"> {{element.is_active}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef> Edit </th>
+          <td mat-cell *matCellDef="let element; let i=index" (click)="openEditModal(i)">
+             <button mat-button class="edit-button">Edit</button> </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element"> 
+            <button mat-button class="delete-button" (click)="deleteCategory(element.id)">Delete</button>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

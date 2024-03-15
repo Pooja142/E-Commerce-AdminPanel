@@ -1,0 +1,12 @@
+.main{
+    padding-top: 50px;
+    padding-left: 20vw;
+    width: 90vw;
+    height: 70vh;
+    box-sizing: border-box;
+
+    @media only screen and (max-width: 768px) {
+      padding-left: 10px; 
+    width: 90vw;
+  }
+} 

@@ -1,0 +1,28 @@
+<mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" [(ngModel)]="name" />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Images</mat-label>
+    <input matInput placeholder="Image URL" [(ngModel)]="imageUrl" />
+    <button mat-button (click)="addImageUrl()">Add Image</button>
+    <div *ngFor="let image of imagesUrls">
+      {{ image }}
+    </div>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput placeholder="Price" [(ngModel)]="price" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Unit</mat-label>
+    <input matInput placeholder="Unit" [(ngModel)]="unit" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Active</mat-label>
+    <input matInput placeholder="Active" [(ngModel)]="is_active" />
+  </mat-form-field>
+  <button mat-button (click)="AddNewCategory()">Save</button>
+  

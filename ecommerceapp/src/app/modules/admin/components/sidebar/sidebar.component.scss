@@ -1,0 +1,33 @@
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18vw;
+  height: 100vh;
+  background: linear-gradient(to right, #4b05ad, #5e2dc2);
+  
+  z-index: 1;
+  color: #fff;
+  padding-top: 70px;
+  cursor: pointer;
+
+  .sidebar-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: 8px;
+    }
+  }
+
+  .sidebar-item-active {
+    padding: 10px;
+    background: linear-gradient(to right, #1416a9, #303448); 
+    
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+}
